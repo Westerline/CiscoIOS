@@ -1,10 +1,10 @@
 # Cisco IOS Tools Repository
 
-* This repository is a collection of tool-oriented Cisco IOS commands. These tools are meant to perform one or two simple tasks. For more complex sequences, you can mix and match tools.
+* This repository is a collection of Cisco IOS command examples.
 
 ## Getting Started
 
-* Download the repository and unzip the files to your preferred destination. For more complex sequences, create a caller script with any proprietary data you require. Then call the tools you need for your task. Mix and match the tools you use to tackle different tasks.
+* Copy/paste the required code.
 
 ### Prerequisites
 
