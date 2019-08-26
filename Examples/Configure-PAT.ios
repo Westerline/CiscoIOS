@@ -1,0 +1,15 @@
+remark Example code for configuring Port Address Translation from a LAN device to a dialer interface, such as a DSL connection.
+remark In this example, 192.168.1.69 is being translated to
+remark access list 102 permits any device in the 192.168.1.0/24 subnet to connect to any device in the 192.168.2.0/24 subnet over port 7060
+remark access list 101 permits any host
+
+ip nat inside source static tcp 192.168.1.69 7060 interface Dialer0 7060
+ip nat inside source static udp 192.168.1.69 7060 interface Dialer0 7060
+ip nat inside source static tcp 192.168.1.69 7000 interface Dialer0 7000
+ip nat inside source static udp 192.168.1.69 7000 interface Dialer0 7000
+ip nat inside source static tcp 192.168.1.69 554 interface Dialer0 554
+ip nat inside source static udp 192.168.1.69 554 interface Dialer0 554
+access-list 102 permit tcp 192.168.1.0 0.0.0.255 eq 7060 192.168.2.0 0.0.0.255
+access-list 101 permit tcp any host 192.168.1.69 eq 7060
+access-list 101 permit tcp any host 192.168.1.69 eq 7000
+access-list 101 permit tcp any host 192.168.1.69 eq 554
