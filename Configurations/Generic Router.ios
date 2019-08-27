@@ -1,0 +1,108 @@
+! Generic Router Config Template
+Enable
+Erase Startup-Config
+Reload
+! <Select N when prompted to save the config>
+! Press 'n' to skip configuration dialog
+
+Enable
+Clock Set hh:mm:ss MONTH YYYY
+Terminal History Size 50
+
+Configure Terminal
+Hostname
+! <Hostname>
+
+Banner motd #
+ ______________
+||            ||
+||  Wesley's  ||
+||    LAN     ||
+||            ||
+||____________||
+|______________|
+ \\************\\
+  \\************\\
+   \      ____    \
+    \_____\___\____\ <MOTD Banner>
+#
+
+Banner login #
+ UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED
+ You must have explicit, authorized permission to access or configure this device.
+ Unauthorized attempts and actions to access or use this system may result in civil and/or
+criminal penalties.
+ All activities performed on this device are logged and monitored.
+ #
+
+Enable Secret
+! <Password>
+
+Line Console
+! <Console #>
+Logging Synchronous
+Password
+! <Password>
+Login
+Exec-Timeout
+! #Min #Sec <0 0 for no timeout>
+Exit
+
+Line VTY # #
+Password
+! <Password>
+Login
+Service Password-Encryption
+Exit
+
+Interface
+! <InterfaceName>#/#
+IP Address
+! <IP> <Mask>
+No Shutdown
+Description Example Link
+Exit
+
+Interface Serial0/0
+Bandwidth 1000
+Clock Rate 1000000
+Line Auxiliary
+! <Line>
+Password
+! <Password>
+Login
+Exit
+
+IP DHCP Excluded-Address 192.168.1.1 192.168.1.10
+! <Low to High Range>
+IP DHCP Pool "Pool_Name"
+! <Prompt Changes to "DHCP-Config">
+Network 192.168.1.0 255.255.255.0
+! <Network ID and Subnet Mask>
+Default Router 192.168.1.1
+! <Same as Default Gateway>
+DNS-Server 8.8.8.8
+Lease 3 12 15
+! <Days, Hours, Minutes>
+Exit
+
+! If your DHCP server is on a different subnet:
+Interface GigabitEthernet 0/0
+IP Helper-Address 10.10.10.254
+Exit
+
+Logging Host
+! <IP Address>
+Logging Console
+! <Message Level>
+No Service Timestamps
+Service Sequence-Numbers
+! <For Sequence Numbers Instead of Date/Time>
+Service Timestamps Log Datetime MSEC
+! <For enabling time-stamps on Syslog server>
+NTP Server 0.0.0.0 version 4
+End
+
+Copy Running-Config Startup-Config
+Reload
+Show Startup-Config

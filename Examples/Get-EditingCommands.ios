@@ -1,0 +1,15 @@
+! Editing Commands
+! Command	    Meaning
+! CTRL + A	    Moves cursor to the beginning of the line
+! CTRL + E	    Moves cursor to the end of the line
+! ESC + B	    Moves back one word
+! CTRL + B	    Moves back one character
+! CTRL + F	    Moves forward one character
+! ESC + F	    Moves forward one word
+! CTRL + D	    Deletes a single character
+! Backspace	    Deletes a single character
+! CTRL + R	    Redisplays a line
+! CTRL + U	    Erases a line
+! CTRL + W	    Erases a word
+! CTRL + Z	    Ends Configuration Mode and returns to Exec
+! Tab	        Finishes typing a command for you

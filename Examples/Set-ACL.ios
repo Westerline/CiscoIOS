@@ -1,14 +1,14 @@
-remark Example code outlining how to create a basic access list. Rules detailed in this example are:
-remark Any client in the 192.168.1.0 /24 subnet range to connect to $Host on any port
-remark Any client in the 192.168.1.0 /24 subnet range to connect to any host in the 192.168.2.0 /24 subnet range on port 8060
-remark Any host to connect to host 192.168.1.69 on port 8060, 8000, and 554
+! Example code outlining how to create a basic access list. Rules detailed in this example are:
+! Any client in the 192.168.1.0 /24 subnet range to connect to $Host on any port
+! Any client in the 192.168.1.0 /24 subnet range to connect to any host in the 192.168.2.0 /24 subnet range on port 8060
+! Any host to connect to host 192.168.1.69 on port 8060, 8000, and 554
 
 Configure Terminal
 Interface di 1
 Ip Inspect Firewall Out
 Exit
 
-Access-List 000 remark Allow Example Out
+Access-List 000
 Access-List 000 Permit TCP 192.168.1.0 0.0.0.255 Host 203.152.100.251 Eq 52722
 Access-List 102 Permit TCP 192.168.1.0 0.0.0.255 Eq 8060 192.168.2.0 0.0.0.255
 Access-List 101 Permit TCP Any Host 192.168.1.69 Eq 7060

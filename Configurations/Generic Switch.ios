@@ -1,0 +1,78 @@
+! Generic Switch Config Template
+Enable
+Erase Startup-Config
+Reload
+! <Select N when prompted to save the config>
+! Press 'n' to skip configuration dialog
+
+Enable
+Clock Set hh:mm:ss MONTH YYYY
+Terminal History Size 50
+
+Configure Terminal
+Hostname
+! <Hostname>
+
+Banner motd #
+ ______________
+||            ||
+||  Wesley's  ||
+||    LAN     ||
+||            ||
+||____________||
+|______________|
+ \\************\\
+  \\************\\
+   \      ____    \
+    \_____\___\____\ <MOTD Banner>
+#
+
+Banner login #
+ UNAUTHORIZED ACCESS TO THIS DEVICE IS PROHIBITED
+ You must have explicit, authorized permission to access or configure this device.
+ Unauthorized attempts and actions to access or use this system may result in civil and/or
+criminal penalties.
+ All activities performed on this device are logged and monitored.
+ #
+
+Enable Secret
+! <Password>
+
+Line Console
+! <Console #>
+Logging Synchronous
+Password
+! <Password>
+Login
+Exec-Timeout
+! #Min #Sec <0 0 for no timeout>
+Exit
+
+Line VTY # #
+Password
+! <Password>
+Login
+Service Password-Encryption
+Exit
+
+Interface VLAN 1
+IP Address
+! <IP> <Mask>
+No Shutdown
+Description Default VLAN
+Exit
+
+Logging Host
+! <IP Address>
+Logging Console
+! <Message Level>
+No Service Timestamps
+Service Sequence-Numbers
+! <For Sequence Numbers Instead of Date/Time>
+Service Timestamps Log Datetime MSEC
+! <For enabling time-stamps on Syslog server>
+NTP Server 0.0.0.0 version 4
+
+Copy Running-Config Startup-Config
+Reload
+Show Startup-Config

@@ -1,0 +1,17 @@
+Enable
+Configure Terminal
+Hostname WELAN
+IP Domain-Name WELAN.LOCAL
+! Set the username to allow SSH
+Username Wesley Password abc123
+! Generate the encryption keys for securing the session
+Crypto Key Generate RSA [bit size 1024]
+! Enable SSH version 2 on the device
+IP SSH Version 2
+! Connect to the VTY lines of the switch or router
+Line VTY 0 15
+! Tell the lines to use the local database for password
+Login Local
+! Configure your access protocols
+Transport Input SSH
+!If you need Telnet too, use "transport input ssh telnet" (not recommended for security reasons)

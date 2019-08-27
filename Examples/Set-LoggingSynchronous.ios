@@ -1,0 +1,6 @@
+! Stops console messages that pop up from disrupting the input you're trying to type.
+
+Enable
+Configure Terminal
+Line Con 0
+Logging Synchronous

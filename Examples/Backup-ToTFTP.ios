@@ -1,6 +1,0 @@
-remark Example code outlining how to backup files from Cisco IOS to a TFTP server.
-
-$BinName = c837-k9o3sy6-mz.123-2.XC2.bin
-$TFTP = 192.168.1.1
-copy flash: $TFTP
-FileName = $BinName
