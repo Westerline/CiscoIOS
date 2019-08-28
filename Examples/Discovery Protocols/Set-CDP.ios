@@ -1,0 +1,14 @@
+!Sets the Cisco Discovery protocol on a Cisco device.
+
+Enable
+
+! To disable:
+No CDP Run
+
+! To enable
+CDP Run
+
+! To set on a specific interface:
+Configure Terminal
+Interface Ethernet 0/0
+CDP Run

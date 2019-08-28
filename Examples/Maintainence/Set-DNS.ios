@@ -1,0 +1,12 @@
+Enable
+
+! To enable DNS:
+IP Domain-Lookup
+
+! To set the IP address of the DNS server:
+IP Name-server
+! <8.8.8.8>
+
+! To append the domain name to the hostname you type in. DNS uses a Fully Qualified Domain Name (FQDN) system
+IP Domain-Name
+! <domain.name>

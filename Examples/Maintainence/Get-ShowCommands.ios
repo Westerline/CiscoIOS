@@ -1,0 +1,136 @@
+Do
+! Can be used to run show commands from configuration mode.
+
+Show Access-List
+! Shows all access lists and their parameters configured on the router.
+! Shows statistics about how many times the line permitted/denied a packet.
+
+Show CDP Entry *
+! Shows information about directly connected devices.
+! Device ID, local interface, holdtime on information, capability, platform, port ID.
+
+Show CDP Neighbour/Show CDP Neighbour Detail
+! Shows the IOS version and IP address of the neighbour device.
+
+Show Controllers
+! Displays information about the physical interface itself.
+! Lists type of serial cable connected.
+!Can be used with "Show IP Interface" to troubleshoot line clocking issues.
+
+Show Flash
+! Verifies the amount of flash memory and the files being stored in flash memory, lists the bytes available.
+
+Show History
+! Shows last X # of commands, 20 is the default.
+
+Show Hosts
+! Shows the hostnames which were setup
+! Perm = manually configured
+! Temp = resolved via DNS
+
+Show Interface
+! Shows the configurable parameters and statistics of all interfaces on a router.
+! Shows interface descriptions.
+! Shows interface status.
+
+Show Interfaces Trunk
+! By default, trunks send and receive information from all VLANs. Untagged frames sent to the management VLAN (VLAN 1).
+
+Show IP Access-List
+! Shows only the IP access lists, not what interface they're applied on.
+
+Show IP ARP
+! Shows the ARP cache on a router ( - equals a physical router interface).
+
+Show IP DHCP Binding
+! Shows information about each IP address on lease.
+
+Show IP DHCP Pool PoolName
+! Shows configured ranges and statistics.
+
+Show IP DHCP Server Statistics
+! Shows more DHCP stats
+
+Show IP DHCP Conflict
+! Shows any DHCP conflicts that need to be manually resolved.
+
+Show IP Interface
+! Shows IPv4 details, broadcast address, MTU, and if an access list is set on the interface
+! Shows interface status.
+! Shows which interfaces have access lists set on them.
+
+Show IP NAT Translations
+! Shows basic information such as translations.
+
+Show IP Protocols
+! Shows any running routing protocols.
+
+Show IP Route
+! Useful in verifying your routing table.
+! C = connected networks
+! L = Local host route; each local route has a /32 prefix defining a route just for the one address which lists the IP address of the router's own interface. This is used to more efficiently forward packets to the router itself.
+
+Show IPv6 Route
+! Useful in verifying your IPv6 routing table.
+! C = connected networks
+! L = Local host route; each local route has a /32 prefix defining a route just for the one address which lists the IP address of the router's own interface. This is used to more efficiently forward packets to the router itself.
+
+Show IPV6 Interface
+! Shows IPv6 details, broadcast address, MTU, and if an access list is set on the interface
+! Shows interface status.
+! Shows which interfaces have access lists set on them.
+
+Show License
+! Shows active licenses, each feature running in the IOS image, and activation & licensing variables for licensed and unlicensed features
+
+Show License Feature
+! Shows supported package and feature licenses, and activation & licensing variables for licensed and unlicensed features
+
+Show License UDI
+! Shows the unique device identifier of the router which comprises the product ID and serial number of the router
+
+Show MAC Address-Table
+! Shows the MAC database with hardware addresses and the interface they're connected to.
+
+Show NTP
+! Shows NTP configuration on a Cisco device.
+! Stratum Value: number from 1 to 15; the lower the value, the higher the NTP priority. 16 means no clocking received.
+
+Show Port Security
+! Shows the port security options
+
+Show Processes
+! Shows the CPU utilization percentage.
+! Shows process priority, status, CPU time used, number of times invoked.
+! Shows two numbers #%/#%.
+! The first number is the total utilization.
+! Second number is the utilization due to interrupt routines.
+
+Show Protocols
+! Shows the layer 1 and layer 2 statistics of an interface as well as the IP addresses
+
+Show Running-Config
+! Shows the running configuration on the Cisco device, stored in RAM.
+! Shows any plaintext passwords.
+! Shows interface descriptions.
+! Shows interface status.
+! Shows the access lists and the specific interfaces that have ACLs on them.
+
+Show Sessions
+! Shows which sessions are still open, * indicates the most recent session.
+
+Show Startup-Config
+! Shows the configuration stored in NVRAM when the Cisco device starts.
+! Shows any plaintext passwords.
+! Shows interface descriptions.
+
+Show Terminal
+! Shows terminal configurations and history buffer size.
+
+Show Users
+! Shows you all active consoles and VTY ports in use.
+
+Show version
+! Shows the current configuration register.
+! Shows the amount of RAM and memory available.
+! Shows IOS version and licensing details.

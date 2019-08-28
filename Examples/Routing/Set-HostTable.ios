@@ -1,0 +1,6 @@
+Enable
+IP Host
+! <Host Name> <TCP Port Number> <IP Address>
+
+! To remove a host:
+No IP Host

@@ -1,0 +1,15 @@
+! To enable:
+Enable
+Configure Terminal
+IPv6 Unicast-Routing
+Interface
+    ! <Interface>
+IPv6 Address
+    !  <IPv6 Prefix>/<Prefix-Length>
+
+! To enable an automatic link-local address:
+IPv6 Enable
+
+! To setup a host to use autoconfiguration from a router IPv6 advertisement:
+IPv6 Address Autoconfiguration
+    ! <Default> to deliver a default route received from the upstream device.

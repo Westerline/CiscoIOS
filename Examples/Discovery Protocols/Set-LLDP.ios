@@ -1,0 +1,19 @@
+! Configures the Link Layer Discover Protocol for Cisco devices which is vendor-independent.
+
+Enable
+
+! To disable:
+No LLDP Run
+
+! To enable
+LLDP Run
+
+! To set on a specific interface:
+Configure Terminal
+Interface Ethernet 0/0
+
+! For transmitting interfaces:
+LLDP Transmit
+
+! For receiving interfaces:
+LLDP Receive

@@ -1,0 +1,5 @@
+! Assign static MAC addresses to interfaces with the following:
+Enable
+Configure Terminal
+MAC Address-Table Static
+    ! <MAC Address> <Vlan> <Interface>

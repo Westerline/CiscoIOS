@@ -1,0 +1,70 @@
+! Certain Cisco Services are enabled by default that can be targets for DOS or break-ins
+! Nothing will make you completely safe. These are tIPs to go for especially if you don't have intrusion detection/prevention system devices.
+! The default Cisco configurations allow for remote access from Any source. ACLs can fix this.
+
+!Deny SNMP traffic inbound on the WAN Interface of your perimeter router.
+Access-List 110 Deny UDP Any Any eq SNMP
+Interface s0/0
+Access-Group 110 in
+
+! Disabling Echo: By default, certain diagNostic ports are enabled for UDP and TCP Services. To overwhelm a router, all an attacker needs to do is send a slew of requests with phony IP addresses. The router will process these and grind to a halt.
+No Service TCP-Small-Servers
+No Service UDP-Small-Servers
+
+! Finger can be used by a remote unix host to find all users on the router
+No Service finger
+
+! Turning off BootP and Autoconfig:
+No IP Boot Server
+No Service Config
+
+! Disabling HTTP Interface: Transmits in cleartext
+No IP HTTP Server
+
+! Disabling IP Source Routing: This feature allows a source IP host to set the packet's route through a network. Disable to disallow these packets to be forwarded to the router addresses specified in the header.
+No IP Source-Route
+
+! Disabling Proxy ARP: A technique whereby another device, usually router, answers ARP requests intended for another machine. The router then accepts responsibility for getting those packets to the correct destination.
+! This can allow for inter subnet communication without configuring routing or default gateways. Requires application to all Interfaces.
+Interface <Interface>
+No IP Proxy-ARP
+
+! Disabling Redirect Messages: ICMP redirect lets hosts on the data link know there's a better route available. This can be used by a potential attacker to sniff out your network topology.
+! Disabling this feature may mean your user traffic takes a suboptimal route. Requires application to all Interfaces.
+Interface <Interface>
+No IP Redirects
+
+! Disabling the Generation of ICMP Unreachable Messages: prevents perimeter routers from telling external hosts which subnets are Not configured. Requires application to all Interfaces.
+No IP Unreachables
+
+! Disabling Multicast Route Caching: Cache lists multicast routing entries. These packets can be read which is a security issue. Disabling this may slow legitimate multicast traffic.
+! Requires application to all Interfaces.
+No IP MRoute-Cache
+
+! Disabling the Maintenance Operation Protocol (MOP): Works at Layer 2 and 3. Used for Services like uploading and downloading system software, remote testing, and problem diagnosis.
+! Requires application to all Interfaces.
+No MOP Enabled
+
+! Turning off the X.25 PAD Service: Packet assembler/disassembler. Legacy Service used to devices to public/private X.25 networks. No longer in use.
+No Service PAD
+
+! Enabling the Nagle TCP Congestion Algorithm: Used for Small packet congestion. If your MTU is above the default 1,500 bytes, it can create an above-average traffic load.
+! If using X Window, will break connections to X Server
+Service Nagle
+
+! Disabling Cisco Discovery Protocol: Can only see directly connected devices. CDP packets aren't forwarded by switches. For security reasons, this should be disabled once you've documented your network (a Note for future image builds)
+! Turn off individual interfaces with "No cdp enable"
+No CDP Run
+
+
+! Disabling the Default Forwarded UDP Protocols: By default, IP helper-address forwards BootP (Server request DHCP) and seven other ports by default. To disable this from occurring, use these commands:
+No IP forward-protocol UDP 69
+No IP forward-protocol UDP 53
+No IP forward-protocol UDP 37
+No IP forward-protocol UDP 137
+No IP forward-protocol UDP 138
+No IP forward-protocol UDP 68
+No IP forward-protocol UDP 49
+
+! Cisco's Auto Secure: Auto Secure is a Cisco feature which can be a good start in the process of securing your network. Performs mAny of the configuration changes listed above plus mAny of the best practices outlined in this book.
+! You still need to configure your ACLs before you can say you're finished.

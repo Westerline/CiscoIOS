@@ -1,0 +1,10 @@
+Enable
+Configure Terminal
+Interface F0/0.1
+IP Address 172.16.9.1 255.255.255.128
+No Shutdown
+F0/0.2
+IP Address 172.16.10.1 255.255.255.128
+Encapsulation dot1q 2
+Int f0/0.3
+IP Address 172.16.10.129

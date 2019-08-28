@@ -1,0 +1,10 @@
+! By default, VTY is configured "login" which means they require a password set or use the "no login" command
+Enable
+Configure Terminal
+Line VTY
+! <MIN - MAX>
+Login
+Password
+! <Password>
+Transport Input All
+Login

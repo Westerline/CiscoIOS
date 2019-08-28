@@ -1,0 +1,18 @@
+Enable
+Configure Terminal
+IP DHCP Excluded-Address
+! <IP Address>
+IP DHCP Pool
+! <PoolName>
+Network
+! <Network Address> <Subnet Mask>
+Default Router
+! <Default Router IP>
+DNS-Server
+! <DNS IP>
+Exit
+
+! If your DHCP server is on a different subnet, configure the relevant interface on each remote router that has a route to the DHCP server:
+Interface GigabitEthernet 0/0
+IP Helper-Address 10.10.10.254
+Exit

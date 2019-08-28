@@ -1,0 +1,14 @@
+! Basic Commands:
+Dir
+Copy
+More:
+Show file
+Delete
+Erase
+Format
+Cd
+Pwd
+Mkdir
+Rmdir
+System:running-config
+Nvram:startup-config

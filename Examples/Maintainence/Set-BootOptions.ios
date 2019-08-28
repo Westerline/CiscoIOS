@@ -1,0 +1,11 @@
+!You can line up different boot options (e.g. Flash, TFTP, then ROM) just like BIOS. The device will attempt to boot from the next logical item if the previous has failed.
+
+! For boot options:
+Boot System ?
+
+! To boot from TFTP or similar:
+Boot System TFTP
+! <Image Name> <Host Name or Address>
+
+! To boot from ROM:
+Boot System ROM

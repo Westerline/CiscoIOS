@@ -1,0 +1,31 @@
+Enable
+Configure Terminal
+
+! Creating a VLAN:
+VLAN
+    ! <VLAN Identifier>
+Name
+    ! <VLAN Name>
+
+! Setting an access port:
+Interface
+    ! <Interface>
+Switchport Mode access
+Switchport Access VLAN3
+Switchport Voice VLAN5
+
+! Setting a trunk port:
+Interface
+    ! <Interface>
+Switchport Trunk
+
+! Only required if your switch doesn't exclusively use 802.1q
+Encapsulation dot1q
+
+! To configure allowed VLANs:
+Switchport Trunk Allowed VLAN
+    ! <VLAN Numbers>
+
+! To set the native VLAN:
+Sitchport Trunk Native VLAN
+    ! <VLAN Number>

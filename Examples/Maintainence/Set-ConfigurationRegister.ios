@@ -1,0 +1,6 @@
+Enable
+Configure Terminal
+Configuration-Register
+! ROMmonitor Mode = 0x2100
+! Mini-IOS = 0x2101
+! Load Cisco IOS from Flash = 0x2102

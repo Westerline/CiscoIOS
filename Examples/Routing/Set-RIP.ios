@@ -1,0 +1,15 @@
+Enable
+Configure Terminal
+Router RIP
+Network
+! <Network Address to Advertise>
+Version 2
+! RIP and EIGRP usually auto-summarize by default. It's better to do that manually. Disabling auto-summary allows these protocols to advertise subnets.
+No Auto Summary
+
+! To stop unwanted RIP updates from propagating across your WAN and LAN, use the "passive-interface" command. This disallows an interface from sending RIP updates, but it can still receive them
+Passive-Interface
+! <Interface>
+
+! Add the default route on one router, then advertise the network to other routers as the default route.
+Default-Information Originate

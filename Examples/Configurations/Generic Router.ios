@@ -86,7 +86,7 @@ Lease 3 12 15
 ! <Days, Hours, Minutes>
 Exit
 
-! If your DHCP server is on a different subnet:
+! If your DHCP server is on a different subnet, configure the relevant interface on each remote router that has a route to the DHCP server:
 Interface GigabitEthernet 0/0
 IP Helper-Address 10.10.10.254
 Exit

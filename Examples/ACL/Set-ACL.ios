@@ -1,0 +1,29 @@
+! Access lists can be used to control the flow of traffic and also to designate interesting traffic that should be NAT'ed.
+
+! Inbound access lists are applied to packets coming into the interface. The inbound list is applied before other things such as routing descisions, crypto maps, route maps, etc.
+! Outbound lists are applied to packets leaving the interface. Since the packet is leaving the interface, most other packet functions have already been applied.
+
+! Standard Access Lists: Condition is only based on the source IP; can be used to filter an entire set of protocols (http, telnet, udp, etc.)
+! Place IP extended access lists as close to the source as possible. Can only filter by source address, if too close to your network then all destinations are affected as a result.
+
+Enable
+Configure Terminal
+Access-List
+    ! <Name/Number> <Permit/Deny> <Any/Host/Hostname> <IP/HostName>
+<Interface to Apply to>
+Access-class
+    -remark
+    ! <ACL Number> <Direction>
+
+
+! Extended Access Lists: Evaluate other fields in layer 3 and layer 4 headers:
+! Place IP extended access lists as close to the source as possible. Can filter traffic before it uses up bandwidth. Can do a more granular filter.
+
+Enable
+Configure Terminal
+Access-List
+    -remark
+    ! <Name/Number> <Permit/Deny> <Transport Protocol> <Source Address> <Destination Address> <Port Number/Application Name>
+<Interface to Apply to>
+Access-class
+    !<ACL Number> <Direction>

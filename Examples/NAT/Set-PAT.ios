@@ -1,0 +1,20 @@
+! To create an IP Nat Pool:
+IP NAT Pool
+    ! <Name> <Start Address> <End Address> <"Netmask"> <Subnet Address>
+
+IP NAT
+    ! <Inside/Outside> <"Source"> <"Static" + IP Address/"List" + ACL Identifier> <IP Address/Pool> <Overload>
+
+Interface <Interface>
+    IP NAT <Inside/Outside>
+
+! Example: tells the router to translate IP addresses that match access-list 1 to the IP address pool "Todd" using overload.
+IP NAT Pool Todd 170.168.2.1 170.168.2.1 NetMask 255.255.255.0
+Access-List 1 Permit 10.1.1.0 0.0.0.255
+IP NAT Inside Source List 1 Pool Todd Overload
+Interface Ethernet 0/0
+IP Address 10.1.1.10 255.255.255.0
+IP NAT Inside
+Interface Serial 0/0
+IP Address 170.168.2.1 255.255.255.0
+IP NAT Outside

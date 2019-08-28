@@ -1,0 +1,14 @@
+Enable
+Show IP Routing
+Configure Terminal
+IP Route
+! <Destination Network> <Mask> <Next-Hop Address or Exit Interface> <Administrative Distance> <Permanent>
+! Administrative Distance is basically the trustworthiness of the route, where 0 is the best and 255 is the worst.
+! Static routes have priority 0. You can setup a "floating static route" with distance of 150 so that if any routing protocols fail, a static route will be the backup.
+
+! To remove a static route:
+No IP Route
+
+! Stub Routers: indicates that the networks in this design have only one way out to reach all other networks. Instead of creating multiple static routes we can just use a single default route.
+IP Route 0.0.0.0 0.0.0.0
+! <Next Hop>

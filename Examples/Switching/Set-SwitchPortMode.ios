@@ -1,0 +1,13 @@
+Enable
+Configure Terminal
+Interface Ethernet 0/0
+Switchport Mode
+    ! <Mode Name>
+        ! Dynamic Auto: makes the interface able to convert to a trunk link if the neighbouring interface is set to trunk.
+        ! Dynamic Desirable: interface actively attempts to convert to a trunk. Will convert if the neighbouring interface is set to trunk, desirable, or auto mode.
+        ! Trunk: permanent trunking mode and tries to convert the neighbouring link into a trunk as well.
+
+! To prevent the interface from generating DTP frames. Only works if the interface is in trunk or access mode. Neighbouring interfaces must be set as a trunk to establish a trunk link.
+        ! Old switches default = dynamic auto
+        ! New switches default = dynamic desirable
+Switchport Nonegotiate

@@ -1,0 +1,14 @@
+! Security Level Acronym: Every Awesome Cisco Engineer Will Need Icecream Daily.
+! By default, all system and debug messages only go out the console port by default and are logged in buffers in RAM.
+
+Enable
+No Logging Buffer
+No Logging Console
+Logging
+! <IP Address>
+Logging
+! <Error Level>
+
+!To Configure Sequence Numbers
+No Service TImestamps
+Service SEquence-Numbers

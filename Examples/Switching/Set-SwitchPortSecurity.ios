@@ -1,0 +1,18 @@
+Enable
+Configure Terminal
+Interface Ethernet 0/0
+
+Switchport Port-Security Aging
+
+! Used to assign individual Mac addresses to each switch port (time consuming). Should be used in conjunction with the "Maximum" option
+Switchport Port-Security Mac-Address
+    ! <Sticky>, provides static MAC security without having to enter each MAC. Initial MACs stick as static, others result in violation.
+
+! Default, can be used to configure # of hosts per port
+Switchport Port-Security Maximum
+
+Switchport Port-Security Violation
+    ! <Violation Name>
+        ! Protect: drops packets with unknown source address
+        ! Restrict: acts like protect, also integrates a log message, increments the security violation counter, and sends an SNMP trap
+        ! Shutdown: DEFAULT, shuts the entire port down. Generates all of the same items as restrict.

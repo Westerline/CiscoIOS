@@ -1,0 +1,13 @@
+! To install a permenent license:
+Install license
+! <URL>
+
+! To install/uninstall a "right-to-use" license:
+License Boot Module
+! <Module Name>
+! <Disable>
+License Clear
+! <Module Name>
+
+! To Backup your IOS License:
+License Save TFTP:Example_License.license

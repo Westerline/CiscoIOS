@@ -1,0 +1,37 @@
+! Example code outlining how to backup files from Cisco IOS to a TFTP server. Verify the TFTP/FTP service is available, and that the server has enough space for the required files.
+
+Ping
+! <TFTP.server>
+
+! Verify the amount of flash memory and files being stored in flash. If there's not enough room, the old image will be erased:
+Show Flash
+
+! Verify the amount of RAM and memory available:
+Show Version
+
+! To backup an IOS image to an external location, where Flash0 = the relevant flash device name:
+Copy Flash0: tftp.server
+FileName = c837-k9o3sy6-mz.123-2.XC2.bin
+
+! To restore an IOS image from an an external location, where Flash0 = the relevant flash device name:
+Copy tftp.server: Flash0
+! If you can copy the new file without erasing the old version, remember to use the "Boot system flash:<IOS-file>" command
+
+! To restore an IOS image while in ROMmonitor mode:
+! Tftpdnld shows help
+! Initialize variables. Best practice is to fill empty values with a zero.
+IP_ADDRESS=192.168.002.001
+IP_SUBNETMASK=255.255.255.000
+DEFAULT_GATEWAY=192.168.002.002
+TFTP_SERVER=192.168.002.002
+TFTP_FILE=c837-k9o3sy6-mz.123-2.XC2.bin
+! Confirm Variables:
+Set
+
+
+! It's also possible to copy the running-config to: Flash, Ftp, Http, Https, Null, etc.
+Copy Running-Config Startup-Config
+Copy RUnning-Config TFTP
+
+! To remove a configuration use:
+Erase Startup-Configuration
